@@ -25,4 +25,12 @@ public class Review {
     public boolean hasSameProduct(Review review) {
         return this.product.equals(review.product);
     }
+
+    public boolean hasProduct(Product product) {
+        return this.product.equals(product);
+    }
+
+    public Person getPerson() {
+        return person;
+    }
 }

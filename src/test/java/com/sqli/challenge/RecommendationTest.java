@@ -118,6 +118,6 @@ public class RecommendationTest
         // for each one you have to calculate its similarity with the user A, then the expected rating is equal to:
         // sumForAllUserOtherThanAOf(similarityToA*ratingOfThisUser(product))/sumOf(similarities of those users to A)
         double expectedRating = recommendationFacade.expectedRating("user1", "product11");
-        assertEquals(expectedRating,2.35, 0.01);
+        assertEquals(expectedRating,4.45, 0.01);
     }
 }

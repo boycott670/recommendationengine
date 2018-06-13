@@ -31,7 +31,8 @@ public class RecommendationFacade {
         this.similarityMetric = similarityMetric;
     }
 
-    public double expectedRating(String user, String product) {
-        throw  new RuntimeException("ToBiImplemented");
+    public double expectedRating(String personName, String productName) {
+        SimilarityMetric similarityMetric = SimilarityMetricFactory.create(this.similarityMetric);
+        return reviews.expectedRating(similarityMetric, new Person(personName), new Product(productName));
     }
 }
