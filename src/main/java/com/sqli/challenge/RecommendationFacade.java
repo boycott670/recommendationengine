@@ -1,12 +1,14 @@
 package com.sqli.challenge;
 
 public class RecommendationFacade {
-    public void addReview(String user, String product, double score) {
-        throw  new RuntimeException("ToBiImplemented");
+    private Reviews reviews = new Reviews();
+    public void addReview(String userName, String productName, double score) {
+
+        reviews.addReview(new Review(new Person(userName), new Product(productName), score));
     }
 
-    public Double reviewScore(String user, String product) {
-        throw  new RuntimeException("ToBiImplemented");
+    public Double reviewScore(String userName, String productName) {
+        return reviews.reviewScore(new Person(userName), new Product(productName));
     }
 
     public double similarity(String user1, String user2) {

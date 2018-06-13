@@ -13,7 +13,7 @@ public class RecommendationTest
     @Rule
     public ExpectedException thrown = ExpectedException.none();
     @Test
-    public void getUserReviewForASpecificProduct()
+        public void getUserReviewForASpecificProduct()
     {
         RecommendationFacade recommendationFacade = new RecommendationFacade();
         recommendationFacade.addReview("user1","product1", 3.5);
