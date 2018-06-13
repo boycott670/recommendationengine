@@ -13,8 +13,9 @@ public class Reviews {
         for(Review review: reviews){
             if(review.match(person, product)) return review.getScore();
         }
-        throw new RuntimeException("No rating found");
+        throw new RecommendationFacadeException("Product not found.");
     }
+
 
     private boolean hasReviewer(Person person) {
        return reviews.stream().anyMatch((Review review) -> review.hasReviewer(person));
