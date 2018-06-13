@@ -11,10 +11,14 @@ public class Review {
     }
 
     public boolean match(Person person, Product product) {
-        return this.person.equals(person) && this.product.equals(product);
+        return hasReviewer(person) && this.product.equals(product);
     }
 
     public Double getScore() {
         return score;
+    }
+
+    public boolean hasReviewer(Person person) {
+        return this.person.equals(person);
     }
 }
