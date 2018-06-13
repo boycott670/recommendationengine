@@ -1,4 +1,4 @@
-package com.sqli.challenge;
+package com.sqli.challenge.model;
 
 public class Review {
     private Person person;
@@ -20,5 +20,9 @@ public class Review {
 
     public boolean hasReviewer(Person person) {
         return this.person.equals(person);
+    }
+
+    public boolean hasSameProduct(Review review) {
+        return this.product.equals(review.product);
     }
 }

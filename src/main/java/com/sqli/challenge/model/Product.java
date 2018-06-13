@@ -1,4 +1,4 @@
-package com.sqli.challenge;
+package com.sqli.challenge.model;
 
 public class Product {
     private String name;
