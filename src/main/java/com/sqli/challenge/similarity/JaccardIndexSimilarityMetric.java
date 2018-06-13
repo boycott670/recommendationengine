@@ -2,12 +2,11 @@ package com.sqli.challenge.similarity;
 
 import com.sqli.challenge.model.Review;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
-class EuclidianSimilarityMetric implements SimilarityMetric{
-    private static final EuclidianSimilarityMetric instance = new EuclidianSimilarityMetric();
-    private EuclidianSimilarityMetric(){
+class JaccardIndexSimilarityMetric implements SimilarityMetric{
+    private static final JaccardIndexSimilarityMetric instance = new JaccardIndexSimilarityMetric();
+    private JaccardIndexSimilarityMetric(){
 
     }
     public static SimilarityMetric getInstance() {
@@ -17,7 +16,6 @@ class EuclidianSimilarityMetric implements SimilarityMetric{
     @Override
     public double score(Collection<Review> reviewsFstPerson, Collection<Review> reviewsSndPerson) {
         Collection<ReviewPair> sharedReviews =sharedReviews(reviewsFstPerson, reviewsSndPerson);
-        return Math.sqrt(sharedReviews.stream().mapToDouble(reviewPair -> Math.pow(reviewPair.fstReview.getScore()-reviewPair.sndReview.getScore(),2)).sum());
+        return (sharedReviews.size()*1.0)/(reviewsFstPerson.size()+reviewsSndPerson.size()-sharedReviews.size());
     }
-
 }

@@ -5,6 +5,8 @@ public class SimilarityMetricFactory {
         switch (similarityMetric.toLowerCase()){
             case "euclidian":
                 return EuclidianSimilarityMetric.getInstance();
+            case "jaccardindex":
+                return JaccardIndexSimilarityMetric.getInstance();
             default:
                 throw new RuntimeException("Unknown metric!");
         }

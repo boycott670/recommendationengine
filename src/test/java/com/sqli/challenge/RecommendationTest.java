@@ -84,7 +84,7 @@ public class RecommendationTest
         // The similarity using JaccardIndex metric is as follow:
         // numberOfItemsSharedBetweenTheTwoUsers/numberOfUnionOfItemsBetweenTheTwoUsers
         double similarity = recommendationFacade.similarity("user1", "user2");
-        assertEquals(similarity,0.075, 0.001);
+        assertEquals(similarity,0.666, 0.001);
     }
     @Test
     public void expectedRatingUsingJaccardIndex()
