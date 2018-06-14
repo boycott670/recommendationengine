@@ -7,6 +7,7 @@ import java.util.Optional;
 
 public final class Reviewer
 {
+  @SuppressWarnings("unused")
   private final String name;
 
   private final Map<Product, Double> reviews;

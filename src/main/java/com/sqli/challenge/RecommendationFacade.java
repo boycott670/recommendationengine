@@ -36,6 +36,6 @@ public class RecommendationFacade
 
 	public double expectedRating(String user, String product)
 	{
-		throw new RuntimeException("ToBiImplemented");
+		return reviewers.expectedRating(user, new Product(product), similarityMetric);
 	}
 }
