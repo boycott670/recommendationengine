@@ -11,6 +11,9 @@ public final class SimilarityMetricFactory
       case "euclidian":
         return new EuclideanSimilarityMetric();
   
+      case "jaccardIndex":
+        return new JaccardIndexSimilarityMetric();
+  
       default:
         throw new RecommendationFacadeException("Unknown similarity metric");
     }
