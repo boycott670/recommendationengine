@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+import com.sqli.challenge.similarities.SimilarityMetric;
+
 public final class Reviewers
 {
 	private final Map<String, Reviewer> reviewers;
@@ -21,5 +23,10 @@ public final class Reviewers
 	public Double reviewScore(final String reviewerName, final Product product)
 	{
 		return Optional.ofNullable(reviewers.get(reviewerName)).orElseThrow(() -> new RecommendationFacadeException("User not found.")).reviewScore(product);
+	}
+	
+	public double similarityOf(final String firstReviewer, final String secondReviewer, final SimilarityMetric similarityMetric)
+	{
+	  return similarityMetric.similarity(reviewers.get(firstReviewer), reviewers.get(secondReviewer));
 	}
 }

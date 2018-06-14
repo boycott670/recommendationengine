@@ -1,8 +1,13 @@
 package com.sqli.challenge;
 
+import com.sqli.challenge.similarities.SimilarityMetric;
+import com.sqli.challenge.similarities.SimilarityMetricFactory;
+
 public class RecommendationFacade
 {
 	private final Reviewers reviewers;
+	
+	private SimilarityMetric similarityMetric;
 
 	public RecommendationFacade()
 	{
@@ -21,12 +26,12 @@ public class RecommendationFacade
 
 	public double similarity(String user1, String user2)
 	{
-		throw new RuntimeException("ToBiImplemented");
+		return reviewers.similarityOf(user1, user2, similarityMetric);
 	}
 
 	public void setSimilarityMetric(String similarityMetric)
 	{
-		throw new RuntimeException("ToBiImplemented");
+		this.similarityMetric = SimilarityMetricFactory.get(similarityMetric);
 	}
 
 	public double expectedRating(String user, String product)
